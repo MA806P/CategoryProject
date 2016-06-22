@@ -29,10 +29,35 @@
  */
 + (UIImage *)imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title;
 
-
+/**
+ *  剪切圆形图片
+ *
+ *  @param image 要剪切的图片
+ *
+ *  @return 圆形图片
+ */
 + (UIImage *)imageWithCircleClipImage:(UIImage *)image;
 
-
+/**
+ *  剪切带有边框的圆形图片
+ *
+ *  @param image 要剪切的图片
+ *  @param width 边框宽度
+ *  @param color 边框的颜色
+ *
+ *  @return 带有边框的圆形图片
+ */
 + (UIImage *)imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color;
+
+/**
+ *  根据颜色来创建图片
+ *
+ *  @param color 图片颜色
+ *  @param size  图片大小
+ *
+ *  @return 纯色的图片
+ */
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
 
 @end

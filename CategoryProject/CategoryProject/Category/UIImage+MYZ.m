@@ -8,8 +8,8 @@
 
 #import "UIImage+MYZ.h"
 
-const CGFloat marginRight = 8;
-const CGFloat marginBottom = 5;
+CGFloat const marginRight = 8;
+CGFloat const marginBottom = 5;
 
 @implementation UIImage (MYZ)
 
@@ -28,7 +28,9 @@ const CGFloat marginBottom = 5;
     CGFloat markY = image.size.height - markImage.size.height - marginBottom;
     [markImage drawAtPoint:CGPointMake(markX, markY)];
     
-    return UIGraphicsGetImageFromCurrentImageContext();
+    UIImage * getImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return getImage;
 }
 
 
@@ -42,7 +44,7 @@ const CGFloat marginBottom = 5;
     
     NSString * markTitle = [NSString stringWithFormat:@"@%@",title];
     
-    UIFont * titleFont = [UIFont systemFontOfSize:14];
+    UIFont * titleFont = [UIFont systemFontOfSize:16];
     NSDictionary * titleAttributes = @{NSFontAttributeName:titleFont, NSForegroundColorAttributeName:[UIColor whiteColor]};
     CGSize titleSize = [markTitle boundingRectWithSize:image.size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:titleAttributes context:nil].size;
     
@@ -50,22 +52,24 @@ const CGFloat marginBottom = 5;
     CGFloat markY = image.size.height - titleSize.height - marginBottom;
     [markTitle drawAtPoint:CGPointMake(markX, markY) withAttributes:titleAttributes];
     
-    
-    return UIGraphicsGetImageFromCurrentImageContext();
+    UIImage * getImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return getImage;
 }
 
 
 
 + (UIImage *)imageWithCircleClipImage:(UIImage *)image
 {
-    //NSLog(@"%@", NSStringFromCGSize(image.size));
-    
     UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
     CGContextRef cr = UIGraphicsGetCurrentContext();
     CGContextAddEllipseInRect(cr, CGRectMake(0, 0, image.size.width, image.size.height));
     CGContextClip(cr);
     [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-    return UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIImage * getImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return getImage;
 
 }
 
@@ -90,8 +94,6 @@ const CGFloat marginBottom = 5;
     }
     
     
-    NSLog(@" %.2lf %.2lf  %.2lf",imageX, imageY, equalWH);
-    
     CGSize borderCircleSize = CGSizeMake(equalWH + width*2, equalWH + width*2);
     UIGraphicsBeginImageContextWithOptions(borderCircleSize, NO, 0);
     
@@ -102,15 +104,36 @@ const CGFloat marginBottom = 5;
     
     CGRect clipFrame = CGRectMake(width, width, equalWH, equalWH);
     CGContextAddEllipseInRect(cr, clipFrame);
-    //[[UIColor whiteColor] set];
-    //CGContextFillPath(cr);
     CGContextClip(cr);
     
     
     [image drawInRect:CGRectMake(imageX+width, imageY+width, image.size.width, image.size.height)];
-    return UIGraphicsGetImageFromCurrentImageContext();
+    UIImage * getImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return getImage;
     
 }
+
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    if (!color || size.width <= 0 || size.height <= 0) return nil;
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    
+    CGContextRef cr = UIGraphicsGetCurrentContext();
+    //CGContextSetFillColorWithColor(context, color.CGColor);
+    //CGContextFillRect(context, rect);
+    
+    CGContextAddRect(cr, CGRectMake(0, 0, size.width, size.height));
+    [color set];
+    CGContextFillPath(cr);
+    
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 
 
