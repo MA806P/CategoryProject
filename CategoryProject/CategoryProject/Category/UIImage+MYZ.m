@@ -122,8 +122,8 @@ CGFloat const marginBottom = 5;
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     
     CGContextRef cr = UIGraphicsGetCurrentContext();
-    //CGContextSetFillColorWithColor(context, color.CGColor);
-    //CGContextFillRect(context, rect);
+    //CGContextSetFillColorWithColor(cr, color.CGColor);
+    //CGContextFillRect(cr, CGRectMake(0, 0, size.width, size.height));
     
     CGContextAddRect(cr, CGRectMake(0, 0, size.width, size.height));
     [color set];
