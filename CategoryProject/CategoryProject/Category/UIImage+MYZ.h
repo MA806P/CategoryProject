@@ -19,6 +19,7 @@
  *  @return 添加过水印的图片
  */
 + (UIImage *)imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName;
+
 /**
  *  添加文字水印
  *
@@ -58,6 +59,16 @@
  *  @return 纯色的图片
  */
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
+
+/**
+ *  获取对应视图的截图
+ *
+ *  @param view 要截图的View
+ *
+ *  @return 截图
+ */
++ (UIImage *)imageWithViewScreenShot:(UIView *)view;
 
 
 @end

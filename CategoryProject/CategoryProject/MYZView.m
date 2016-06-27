@@ -54,12 +54,17 @@
         imgView5.image = [UIImage imageWithCircleClipImage:image5 andBorderWidth:20 andBorderColor:[UIColor colorWithRed:0.000 green:0.251 blue:0.502 alpha:1.000]];
         [self addSubview:imgView5];
         
-        
+        //获得纯颜色的图片
         UIImageView * imgView6 = [[UIImageView alloc] initWithFrame:CGRectMake(140, 20, 100, 100)];
         imgView6.backgroundColor = [UIColor whiteColor];
         imgView6.contentMode = UIViewContentModeCenter;
         imgView6.image = [UIImage imageWithColor:[UIColor brownColor] size:CGSizeMake(60, 80)];
         [self addSubview:imgView6];
+        
+        //获取View的截图, 有点模糊
+        UIImageView * imgView7 = [[UIImageView alloc] initWithFrame:CGRectMake(140, 140, 100, 100)];
+        imgView7.image = [UIImage imageWithViewScreenShot:imgView5];
+        [self addSubview:imgView7];
         
     }
     return self;

@@ -135,6 +135,15 @@ CGFloat const marginBottom = 5;
 }
 
 
++ (UIImage *)imageWithViewScreenShot:(UIView *)view
+{
+    UIGraphicsBeginImageContext(view.frame.size);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 
 @end
