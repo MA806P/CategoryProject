@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D674FB1D2B997200B421D7 /* NSDictionary+MYZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D674FA1D2B997200B421D7 /* NSDictionary+MYZ.m */; };
+		18D674FE1D2B9B6300B421D7 /* NSString+MYZ.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D674FD1D2B9B6300B421D7 /* NSString+MYZ.m */; };
 		DA60E8941D12EDAF001CAE06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60E85C1D12EDAF001CAE06 /* AppDelegate.m */; };
 		DA60E8951D12EDAF001CAE06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA60E85D1D12EDAF001CAE06 /* Assets.xcassets */; };
 		DA60E8961D12EDAF001CAE06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA60E85E1D12EDAF001CAE06 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		186507311D0D3EB30011E6C6 /* CategoryProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CategoryProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D674F91D2B997200B421D7 /* NSDictionary+MYZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MYZ.h"; sourceTree = "<group>"; };
+		18D674FA1D2B997200B421D7 /* NSDictionary+MYZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MYZ.m"; sourceTree = "<group>"; };
+		18D674FC1D2B9B6300B421D7 /* NSString+MYZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MYZ.h"; sourceTree = "<group>"; };
+		18D674FD1D2B9B6300B421D7 /* NSString+MYZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MYZ.m"; sourceTree = "<group>"; };
 		DA60E85B1D12EDAF001CAE06 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA60E85C1D12EDAF001CAE06 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA60E85D1D12EDAF001CAE06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 			children = (
 				DA60E8631D12EDAF001CAE06 /* UIImage+MYZ.h */,
 				DA60E8641D12EDAF001CAE06 /* UIImage+MYZ.m */,
+				18D674F91D2B997200B421D7 /* NSDictionary+MYZ.h */,
+				18D674FA1D2B997200B421D7 /* NSDictionary+MYZ.m */,
+				18D674FC1D2B9B6300B421D7 /* NSString+MYZ.h */,
+				18D674FD1D2B9B6300B421D7 /* NSString+MYZ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -263,6 +273,7 @@
 				DA60E8981D12EDAF001CAE06 /* UIImage+MYZ.m in Sources */,
 				DA60E8A51D12EDAF001CAE06 /* SDWebImageManager.m in Sources */,
 				DA60E89D1D12EDAF001CAE06 /* NSData+GIF.m in Sources */,
+				18D674FB1D2B997200B421D7 /* NSDictionary+MYZ.m in Sources */,
 				DA60E8A11D12EDAF001CAE06 /* SDWebImageDecoder.m in Sources */,
 				DA60E8AD1D12EDAF001CAE06 /* UIView+WebCacheOperation.m in Sources */,
 				DA60E8A21D12EDAF001CAE06 /* SDWebImageDownloader.m in Sources */,
@@ -279,6 +290,7 @@
 				DA60E8A41D12EDAF001CAE06 /* SDWebImageManager+MJ.m in Sources */,
 				DA60E89F1D12EDAF001CAE06 /* SDImageCache.m in Sources */,
 				DA60E8A91D12EDAF001CAE06 /* UIImage+MultiFormat.m in Sources */,
+				18D674FE1D2B9B6300B421D7 /* NSString+MYZ.m in Sources */,
 				DA60E8AE1D12EDAF001CAE06 /* ViewController.m in Sources */,
 				DA60E8AB1D12EDAF001CAE06 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DA60E8A81D12EDAF001CAE06 /* UIImage+GIF.m in Sources */,
