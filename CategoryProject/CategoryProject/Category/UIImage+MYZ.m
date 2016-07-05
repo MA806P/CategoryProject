@@ -14,7 +14,7 @@ CGFloat const marginBottom = 5;
 @implementation UIImage (MYZ)
 
 
-+ (UIImage *)imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName
 {
     
     UIImage * image = [UIImage imageNamed:name];
@@ -35,7 +35,7 @@ CGFloat const marginBottom = 5;
 
 
 
-+ (UIImage *)imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title
 {
     UIImage * image = [UIImage imageNamed:name];
     
@@ -59,7 +59,7 @@ CGFloat const marginBottom = 5;
 
 
 
-+ (UIImage *)imageWithCircleClipImage:(UIImage *)image
++ (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image
 {
     UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
     CGContextRef cr = UIGraphicsGetCurrentContext();
@@ -73,7 +73,7 @@ CGFloat const marginBottom = 5;
 
 }
 
-+ (UIImage *)imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color
++ (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color
 {
     CGFloat imageW = image.size.width;
     CGFloat imageH = image.size.height;
@@ -115,7 +115,7 @@ CGFloat const marginBottom = 5;
 }
 
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
++ (UIImage *)myz_imageWithColor:(UIColor *)color size:(CGSize)size
 {
     if (!color || size.width <= 0 || size.height <= 0) return nil;
     
@@ -135,7 +135,7 @@ CGFloat const marginBottom = 5;
 }
 
 
-+ (UIImage *)imageWithViewScreenShot:(UIView *)view
++ (UIImage *)myz_imageWithViewScreenShot:(UIView *)view
 {
     UIGraphicsBeginImageContext(view.frame.size);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];

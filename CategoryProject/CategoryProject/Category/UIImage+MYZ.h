@@ -18,7 +18,7 @@
  *
  *  @return 添加过水印的图片
  */
-+ (UIImage *)imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName;
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName;
 
 /**
  *  添加文字水印
@@ -28,7 +28,7 @@
  *
  *  @return 添加过文字的水印
  */
-+ (UIImage *)imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title;
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title;
 
 /**
  *  剪切圆形图片
@@ -37,7 +37,7 @@
  *
  *  @return 圆形图片
  */
-+ (UIImage *)imageWithCircleClipImage:(UIImage *)image;
++ (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image;
 
 /**
  *  剪切带有边框的圆形图片
@@ -48,7 +48,7 @@
  *
  *  @return 带有边框的圆形图片
  */
-+ (UIImage *)imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color;
++ (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color;
 
 /**
  *  根据颜色来创建图片
@@ -58,7 +58,7 @@
  *
  *  @return 纯色的图片
  */
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage *)myz_imageWithColor:(UIColor *)color size:(CGSize)size;
 
 
 /**
@@ -68,7 +68,7 @@
  *
  *  @return 截图
  */
-+ (UIImage *)imageWithViewScreenShot:(UIView *)view;
++ (UIImage *)myz_imageWithViewScreenShot:(UIView *)view;
 
 
 @end
