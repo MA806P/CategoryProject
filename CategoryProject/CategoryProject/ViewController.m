@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "SDWebImageManager.h"
 
+#import "NSString+MYZ.h"
+
 @interface ViewController ()
 
 @end
@@ -21,11 +23,53 @@
     [super viewDidLoad];
     
     //图片分类
-    [self imageExtensionTest];
+    //[self imageExtensionTest];
     
-    
+    //字符串分类
+    [self stringExtension];
     
 }
+
+
+//字符串分类
+- (void)stringExtension
+{
+    /**
+     *  - (CGSize)myz_stringSizeWithMaxSize:(CGSize)maxSize andFont:(UIFont *)font;
+    + (NSString *)myz_stringGetWeekdayFromDate:(NSString *)dateString;
+    + (NSString *)myz_stringMD5WithInput:(NSString*)input;
+    + (NSString *)myz_stringGetHomeDirectory;
+    + (NSString *)myz_stringGetDocumentDirectory;
+    + (NSString *)myz_stringGetCachesDirectory;
+    + (NSString *)myz_stringGetTemporaryDirectory;
+    - (float)myz_getFilePathSize;
+     */
+    
+    
+    
+    NSString * str1 = @"zhishiyinweizairenqunzhongduokanleniyiyanzaiyebunengwangjinirongyan";
+    UIFont * font = [UIFont systemFontOfSize:15];
+    CGSize strSize = [str1 myz_stringSizeWithMaxSize:CGSizeMake(60, 600) andFont:font];
+    UILabel * lab = [[UILabel alloc] initWithFrame:(CGRect){20, 20, strSize}];
+    lab.backgroundColor = [UIColor lightGrayColor];
+    lab.numberOfLines = 0;
+    lab.font = font;
+    lab.text = str1;
+    [self.view addSubview:lab];
+    
+    
+    NSLog(@"%@", [NSString myz_stringGetWeekdayFromDate:@"2016-07-06 16:52:00"]);
+    NSLog(@"%@", [NSString myz_stringMD5WithInput:@"123"]);
+    NSLog(@"%@", [NSString myz_stringGetHomeDirectory]);
+    NSLog(@"%@", [NSString myz_stringGetDocumentDirectory]);
+    NSLog(@"%@", [NSString myz_stringGetCachesDirectory]);
+    NSLog(@"%@", [NSString myz_stringGetTemporaryDirectory]);
+    
+    float size = [[NSString myz_stringGetCachesDirectory] myz_getFilePathSize];
+    NSLog(@" %.2f ", size);
+}
+
+
 
 //图片分类
 - (void)imageExtensionTest
