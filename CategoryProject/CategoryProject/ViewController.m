@@ -12,6 +12,7 @@
 #import "SDWebImageManager.h"
 
 #import "NSString+MYZ.h"
+#import "UIView+MYZ.h"
 
 @interface ViewController ()
 
@@ -50,7 +51,10 @@
     NSString * str1 = @"zhishiyinweizairenqunzhongduokanleniyiyanzaiyebunengwangjinirongyan";
     UIFont * font = [UIFont systemFontOfSize:15];
     CGSize strSize = [str1 myz_stringSizeWithMaxSize:CGSizeMake(60, 600) andFont:font];
-    UILabel * lab = [[UILabel alloc] initWithFrame:(CGRect){20, 20, strSize}];
+    UILabel * lab = [[UILabel alloc] init];
+    lab.x = 60;
+    lab.y = 20;
+    lab.size = strSize;
     lab.backgroundColor = [UIColor lightGrayColor];
     lab.numberOfLines = 0;
     lab.font = font;
