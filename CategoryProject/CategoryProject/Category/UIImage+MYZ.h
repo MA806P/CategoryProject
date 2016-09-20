@@ -71,4 +71,12 @@
 + (UIImage *)myz_imageWithViewScreenShot:(UIView *)view;
 
 
+
+/** gif data 生成UIImage */
++ (UIImage *)myz_imageWithAnimatedGIFData:(NSData *)data;
++ (UIImage *)myz_imageWithAnimatedGIFURL:(NSURL *)url;
+
+
+
+
 @end

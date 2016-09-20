@@ -24,10 +24,10 @@
     [super viewDidLoad];
     
     //图片分类
-    //[self imageExtensionTest];
+    [self imageExtensionTest];
     
     //字符串分类
-    [self stringExtension];
+    //[self stringExtension];
     
 }
 
@@ -124,6 +124,14 @@
     UIImageView * imgView7 = [[UIImageView alloc] initWithFrame:CGRectMake(140, 140, 100, 100)];
     imgView7.image = [UIImage myz_imageWithViewScreenShot:imgView5];
     [self.view addSubview:imgView7];
+    
+    //显示GIF图片
+    UIImageView * imgView8 = [[UIImageView alloc] initWithFrame:CGRectMake(140, 260, 100, 100)];
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"00" ofType:@"gif"];
+    imgView8.image = [UIImage myz_imageWithAnimatedGIFData:[NSData dataWithContentsOfFile:path]];
+    [self.view addSubview:imgView8];
+    
+    
 }
 
 
