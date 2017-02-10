@@ -1,6 +1,4 @@
 # Category
-<br>
-常用的一些category
 
 <br>
 ### UIImage+MYZ
@@ -18,7 +16,7 @@
 ```
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image;
 ```
-<br>剪切带有边框的圆形图片<br>
+<br>剪切圆形图片，并带有边框<br>
 ```
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color;
 ```
