@@ -72,11 +72,16 @@
 
 
 
-/** gif data 生成UIImage */
+/** 
+ * gif data 生成UIImage 
+ */
 + (UIImage *)myz_imageWithAnimatedGIFData:(NSData *)data;
 + (UIImage *)myz_imageWithAnimatedGIFURL:(NSURL *)url;
 
-
+/** 
+ * 拉伸图片，只拉伸中间点 
+ */
++ (UIImage *)myz_stretchImageWithName:(NSString *)name;
 
 
 @end

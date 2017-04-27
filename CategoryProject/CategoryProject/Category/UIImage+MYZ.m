@@ -74,6 +74,7 @@ CGFloat const marginBottom = 5;
 
 }
 
+
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color
 {
     CGFloat imageW = image.size.width;
@@ -115,7 +116,7 @@ CGFloat const marginBottom = 5;
     
 }
 
-
+//根据颜色来创建图片
 + (UIImage *)myz_imageWithColor:(UIColor *)color size:(CGSize)size
 {
     if (!color || size.width <= 0 || size.height <= 0) return nil;
@@ -135,7 +136,7 @@ CGFloat const marginBottom = 5;
     return image;
 }
 
-
+//获取对应view的截图
 + (UIImage *)myz_imageWithViewScreenShot:(UIView *)view
 {
     UIGraphicsBeginImageContext(view.frame.size);
@@ -271,6 +272,8 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     }
 }
 
+
+//gif data 生成UIImage 
 + (UIImage *)myz_imageWithAnimatedGIFData:(NSData *)data
 {
     return animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceCreateWithData((__bridge CFTypeRef) data, NULL));
@@ -281,6 +284,13 @@ static UIImage *animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceRe
     return animatedImageWithAnimatedGIFReleasingImageSource(CGImageSourceCreateWithURL((__bridge CFTypeRef) url, NULL));
 }
 
+
+//拉伸图片，只拉伸中间点
++ (UIImage *)myz_stretchImageWithName:(NSString *)name
+{
+    UIImage *image = [UIImage imageNamed:name];
+    return [image stretchableImageWithLeftCapWidth:image.size.width * 0.5 topCapHeight:image.size.height * 0.5];
+}
 
 
 @end
