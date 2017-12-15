@@ -17,13 +17,9 @@
             <key>metadata</key>  
             <dict>  
                 <key>bundle-identifier</key>  
-                <string>com.qgbes.pjob</string>  
+                <string>com.159Cai.lottery</string>  
                 <key>bundle-version</key>  
-                <string>1.0.0</string>  
-                <key>kind</key>  
-                <string>software</string>  
-                <key>title</key>  
-                <string>测试APP免Appstore安装项目</string>  
+                <string>4.0.1</string>
             </dict>  
         </dict>  
     </array>  
