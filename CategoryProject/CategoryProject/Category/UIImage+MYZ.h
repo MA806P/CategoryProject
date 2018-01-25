@@ -30,6 +30,8 @@
  */
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title;
 
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title andMarkBgColor:(UIColor *)bgColor;
+
 /**
  *  剪切圆形图片
  *

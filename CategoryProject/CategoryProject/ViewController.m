@@ -24,10 +24,16 @@
     [super viewDidLoad];
     
     //图片分类
-    [self imageExtensionTest];
+    //[self imageExtensionTest];
     
     //字符串分类
     //[self stringExtension];
+    
+    
+    //文字水印
+    UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
+    imgView.image = [UIImage myz_imageWithImageName:@"11" andMarkTitle:@"1" andMarkBgColor:[UIColor redColor]];
+    [self.view addSubview:imgView];
     
 }
 

@@ -59,6 +59,43 @@ CGFloat const marginBottom = 5;
 }
 
 
++ (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title andMarkBgColor:(UIColor *)bgColor {
+    
+    UIImage * image = [UIImage imageNamed:name];
+    
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
+    [image drawAtPoint:CGPointZero];
+    
+    CGFloat titleWH = 40;
+    CGFloat markX = image.size.width - titleWH - marginRight;
+    CGFloat markY = image.size.height - titleWH - marginBottom;
+    
+    NSString * markTitle = [NSString stringWithFormat:@"%@",title];
+    UIFont * titleFont = [UIFont systemFontOfSize:20];
+    NSDictionary * titleAttributes = @{NSFontAttributeName:titleFont, NSForegroundColorAttributeName:[UIColor whiteColor]};
+    CGSize titleSize = [markTitle boundingRectWithSize:image.size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:titleAttributes context:nil].size;
+    CGFloat titleContentX = (titleWH - titleSize.width) * 0.5;
+    CGFloat titleContentY = (titleWH - titleSize.height) * 0.5;
+    //[markTitle drawAtPoint:CGPointMake(markX, markY) withAttributes:titleAttributes];
+    
+    
+    CGContextRef cr = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(cr, bgColor.CGColor);
+    CGContextFillEllipseInRect(cr, CGRectMake(markX, markY, titleWH, titleWH));
+//    CGContextAddEllipseInRect(cr, CGRectMake(markX, markY, titleWH, titleWH));
+//    CGContextClip(cr);
+    
+    [markTitle drawInRect:CGRectMake(markX + titleContentX, markY + titleContentY, titleWH, titleWH) withAttributes:titleAttributes];
+
+    
+    UIImage * getImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return getImage;
+    
+}
+
+
+
 
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image
 {
