@@ -15,6 +15,7 @@ CGFloat const marginBottom = 5;
 @implementation UIImage (MYZ)
 
 
+//添加图片水印
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkImageName:(NSString *)markImageName
 {
     
@@ -35,7 +36,7 @@ CGFloat const marginBottom = 5;
 }
 
 
-
+//添加文字水印
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title
 {
     UIImage * image = [UIImage imageNamed:name];
@@ -59,6 +60,7 @@ CGFloat const marginBottom = 5;
 }
 
 
+//文字角标水印 圆形水印角标
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title andMarkBgColor:(UIColor *)bgColor {
     
     UIImage * image = [UIImage imageNamed:name];
@@ -96,7 +98,7 @@ CGFloat const marginBottom = 5;
 
 
 
-
+//剪切圆形图片
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image
 {
     UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
@@ -111,7 +113,7 @@ CGFloat const marginBottom = 5;
 
 }
 
-
+//剪切带有边框的圆形图片
 + (UIImage *)myz_imageWithCircleClipImage:(UIImage *)image andBorderWidth:(CGFloat)width andBorderColor:(UIColor *)color
 {
     CGFloat imageW = image.size.width;

@@ -30,6 +30,13 @@
  */
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title;
 
+/**
+ *  文字角标水印 圆形水印角标
+ *
+ *  @param name 图片名
+ *  @param title 文字
+ *  @param bgColor 文字背景色
+ */
 + (UIImage *)myz_imageWithImageName:(NSString *)name andMarkTitle:(NSString *)title andMarkBgColor:(UIColor *)bgColor;
 
 /**
